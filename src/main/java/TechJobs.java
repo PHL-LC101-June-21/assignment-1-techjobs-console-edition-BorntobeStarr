@@ -62,7 +62,7 @@ public class TechJobs {
                 String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
-                    printJobs(JobData.findByValue(searchTerm));
+                    printJobs(JobData.findByValue(searchTerm.toUpperCase()));
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
                 }
@@ -122,7 +122,7 @@ public class TechJobs {
         for (HashMap<String, String> jobs: someJobs){
             System.out.println("*****");
                 for (HashMap.Entry<String, String> i: jobs.entrySet()){
-                    System.out.println(i.getKey() + ":" + i.getValue());
+                    System.out.println(i.getKey() + ": " + i.getValue());
                 }
             System.out.println("*****");
             System.out.println("\n");
